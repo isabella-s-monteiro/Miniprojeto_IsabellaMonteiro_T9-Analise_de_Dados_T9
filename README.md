@@ -60,8 +60,8 @@ Para o perfil familiar não ser distorcido por clientes que compram várias veze
 | Desvio padrão | 1,41 |
 | Moda | 0 |
 | Mínimo / Máximo | 0 / 4 |
-| Q1 (25%) | 0,0 |
-| Q3 (75%) | 2,0 |
+| 1º Quartil (Q1 - 25%) | 0,0 |
+| 3º Quartil (Q3 - 75%) | 2,0 |
 
 ### 6. Análises com `groupby`
 
@@ -91,7 +91,6 @@ Removi apenas duplicatas exatas (linhas 100% idênticas). No varejo, uma linha r
    
 ### 9. Melhorias futuras
 
-- **Banco de dados (PostgreSQL):** migrar o armazenamento e as consultas para o PostgreSQL, usando SQLAlchemy e SQL otimizado para grande volume de transações.
-- **Modelo relacional (Star Schema):** separar a tabela única em dimensões (clientes, produtos) e fato (compras), reduzindo redundância e melhorando o desempenho das consultas.
-- **Dashboard interativo:** conectar os dados limpos a uma ferramenta de BI (Looker Studio ou Power BI) para visualizar vendas por período, categoria e segmento.
-- **Automação do ETL:** agendar a importação, a limpeza e a geração do relatório.
+Banco de dados (PostgreSQL): migrar o armazenamento para PostgreSQL utilizando SQLAlchemy e consultas SQL otimizadas.   
+Modelo relacional (Star Schema): estruturar tabelas dimensão (clientes, produtos) e tabela fato (compras) para reduzir redundâncias.   Dashboard interativo: conectar os dados higienizados ao Power BI ou Looker Studio para análise visual de vendas por período e segmento.   
+Automação de ETL: agendar o fluxo de ingestão, tratamento e emissão do relatório.
