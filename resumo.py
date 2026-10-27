@@ -7,7 +7,6 @@ from pipeline_dados_varejo import importar_dados
 from formatacao import console, numero_br
 
 def calcular_estatisticas_filhos(df):
-
     df_clientes = (
         df.assign(DATA=pd.to_datetime(df["DATA"], dayfirst=True))
         .sort_values("DATA")
@@ -28,7 +27,6 @@ def calcular_estatisticas_filhos(df):
     }
 
 def mostrar_resumo(df):
-    
     total_registros = len(df)
     total_compras = df["CO_ID"].nunique()
     total_clientes = df["CL_ID"].nunique()
@@ -41,7 +39,6 @@ def mostrar_resumo(df):
     itens_por_categoria = df.groupby("PR_CAT").size().sort_values(ascending=False)
     categoria_top = itens_por_categoria.index[0]
     
-
     compras_por_classe = df.groupby("CL_SEG")["CO_ID"].nunique()
 
     texto = (
